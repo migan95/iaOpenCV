@@ -5,6 +5,7 @@ ix = -1
 iy = -1
 dibujando = False
 
+
 def draw_rectangle(event, x, y, flags, params):
     global ix, iy, dibujando
 
@@ -18,15 +19,17 @@ def draw_rectangle(event, x, y, flags, params):
         dibujando = False
         cv2.rectangle(img, (ix, iy), (x, y), (0, 152, 231), -1)
 
+
 img = np.zeros((512, 512, 3), dtype="uint8")
 
-cv2.namedWindow(winname='mi dibujo')
-cv2.setMouseCallback('mi dibujo', draw_rectangle)
+cv2.namedWindow(winname='Tarea IA')
+cv2.setMouseCallback('Tarea IA', draw_rectangle)
 
 while True:
-    cv2.imshow('mi dibujo', img)
+    cv2.imshow('Tarea IA', img)
 
     if cv2.waitKey(20) & 0xFF == 27:
         break
 
-        cv2.destroyAllWindow()
+
+cv2.destroyAllWindow()
